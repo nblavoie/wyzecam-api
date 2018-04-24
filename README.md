@@ -27,6 +27,18 @@ JSON payload :
 }
 ```
 
+Field Key  | Field Type | Details
+------------- | ------------- | -------------
+sc  | String (32 char length) | Probably a secret hash.
+sv  | String (32 char length) | TBD.
+app_ver | String | Mobile app version
+ts | Timestamp | Current timestamp in UTC.
+access_token | String | For the login request, this field is empty. Upon a successful login, the access_token will be returned as a JSON value (see ```data.access_token``` in the next section).
+phone_id | GUID | A unique phone identifiant.
+user_name | String | Your Wyzecam email.
+password | String | Algorithm to be defined (32 char length. MD5 ??).
+
+
 Example with cURL :
 
 ```curl
