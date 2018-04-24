@@ -31,7 +31,7 @@ Field Key  | Field Type | Details
 ------------- | ------------- | -------------
 sc  | String (32 char length) | Probably a secret hash.
 sv  | String (32 char length) | TBD.
-app_ver | String | Mobile app version. Curently using com.hualai___1.1.52.
+app_ver | String | Mobile app version. Curently using ```com.hualai___1.1.52```.
 ts | Timestamp | Current timestamp in UTC.
 access_token | String | For the login request, this field is empty. Upon a successful login, the access_token will be returned as a JSON value (see ```data.access_token``` in the next section).
 phone_id | GUID | A unique phone identifiant.
