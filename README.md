@@ -16,12 +16,12 @@ JSON payload :
 
 ```json
 {
-    "sc": "???",
-    "sv": "???",
+    "sc": "f5609af3fa9541fd82a486df5fd9965a",
+    "sv": "1ee66ee1fe03403b9ded3fe2fa869f2a",
     "app_ver": "com.hualai___1.1.52",
     "ts": 1524247514196,
     "access_token": "",
-    "phone_id": "phone guid",
+    "phone_id": "bc151f39-787b-4871-be27-5a20fd0a1937",
     "user_name": "email@domain.com",
     "password": "password"
 }
@@ -29,20 +29,20 @@ JSON payload :
 
 Field Key  | Field Type | Details
 ------------- | ------------- | -------------
-sc  | String (32 char length) | Probably a secret hash.
+sc  | String (32 char length) | TBD.
 sv  | String (32 char length) | TBD.
 app_ver | String | Mobile app version. Curently using ```com.hualai___1.1.52```.
-ts | Timestamp | Current timestamp in UTC.
+ts | Time | Current time in milliseconds.
 access_token | String | For the login request, this field is empty. Upon a successful login, the access_token will be returned as a JSON value (see ```data.access_token``` in the next section).
-phone_id | GUID | A unique phone identifiant.
+phone_id | GUID | A unique phone identifiant. For that purpose, you [may generate a new GUID](https://www.guidgenerator.com/). As example, here is a valid GUID : ```bc151f39-787b-4871-be27-5a20fd0a1937```.
 user_name | String | Your Wyzecam email.
-password | String | Your Wyzecam password. Algorithm to be defined (32 char length. MD5 ??).
+password | String | Your Wyzecam password. Hash is made of ```MD5(MD5(password))```.
 
 
 Example with cURL :
 
 ```curl
-curl -H "Content-Type: application/json" -X POST -d '{"sc":""???",","sv":""???",","app_ver":"com.hualai___1.1.52","ts":1524248711789,"access_token":"","phone_id":"phone guid","user_name":"email@domain.com","password":"password"}' https://api.wyzecam.com:8443/app/user/login
+curl -H "Content-Type: application/json" -X POST -d '{"sc":""f5609af3fa9541fd82a486df5fd9965a",","sv":""1ee66ee1fe03403b9ded3fe2fa869f2a",","app_ver":"com.hualai___1.1.52","ts":1524248711789,"access_token":"","phone_id":"bc151f39-787b-4871-be27-5a20fd0a1937","user_name":"email@domain.com","password":"password"}' https://api.wyzecam.com:8443/app/user/login
 ```
 
 JSON response example :
