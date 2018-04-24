@@ -36,7 +36,7 @@ ts | Timestamp | Current timestamp in UTC.
 access_token | String | For the login request, this field is empty. Upon a successful login, the access_token will be returned as a JSON value (see ```data.access_token``` in the next section).
 phone_id | GUID | A unique phone identifiant.
 user_name | String | Your Wyzecam email.
-password | String | Algorithm to be defined (32 char length. MD5 ??).
+password | String | Your Wyzecam password. Algorithm to be defined (32 char length. MD5 ??).
 
 
 Example with cURL :
