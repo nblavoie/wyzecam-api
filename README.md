@@ -78,4 +78,76 @@ TBD
 
 ## 2. List devices (get list of cameras).
 
-TBD.
+URL: POST https://api.wyzecam.com:8443/app/device/get_device_list
+
+JSON payload:
+```json
+{
+	"sv": "01463873df804629b15694df13126d31",
+	"sc": "01dd431d098546f9baf5233724fa2ee2",
+	"ts": 1525365683583,
+	"app_ver": "com.hualai.WyzeCam___1.3.116",
+	"phone_id": "bc151f39-787b-4871-be27-5a20fd0a1937",
+	"access_token": "ACQUIRED_AT_LOGIN"
+}
+```
+
+
+Field Key  | Field Type | Details
+------------- | ------------- | -------------
+sc  | String (32 char length) | TBD.
+sv  | String (32 char length) | TBD.
+app_ver | String | Mobile app version. Curently using ```com.hualai___1.1.52```.
+ts | Time | Current time in milliseconds.
+access_token | String | An access token acquired at login. (see ```data.access_token```).
+phone_id | GUID | A unique phone identifiant. For that purpose, you [may generate a new GUID](https://www.guidgenerator.com/). As example, here is a valid GUID : ```bc151f39-787b-4871-be27-5a20fd0a1937```.
+
+Example with cURL:
+```
+    curl -H 'Host: api.wyzecam.com:8443' -H 'Content-Type: application/json' -H 'Accept: */*' -H 'User-Agent: HLHome/1.3.116 (iPhone; iOS 11.3; Scale/3.00)' -H 'Accept-Language: en-US;q=1' --data-binary '{"sv":"01463873df804629b15694df13126d31","sc":"01dd431d098546f9baf5233724fa2ee2","ts":1525365683583,"app_ver":"com.hualai.WyzeCam___1.1.52","phone_id":"bc151f39-787b-4871-be27-5a20fd0a1937","access_token":"ACQUIRED_AT_LOGIN"}' --compressed 'https://api.wyzecam.com:8443/app/device/get_device_list'
+```
+
+JSON response example:
+```
+{
+	"ts": 1525365690660,
+	"code": "1",
+	"msg": "",
+	"data": {
+		"device_info_list": [{
+			"mac": "CAMERA_MAC_ADDRESS",
+			"enr": "TBD",
+			"p2p_id": "PEER_TO_PEER_IDENTIFIER",
+			"p2p_type": 3,
+			"product_model": "WYZEC1-JZ",
+			"product_type": "Camera",
+			"hardware_ver": "0.0.0.0",
+			"firmware_ver": "4.9.1.42",
+			"role": 1,
+			"nickname": "LilCam",
+			"device_logo": "",
+			"device_timezone": "",
+			"binding_user_nickname": "ACCOUNT_EMAIL_ADDRESS",
+			"ssid": "CAMERA_CONNECTED_WIFI_SSIDE",
+			"ip": "CAMERA_IP_ADDRESS",
+			"conn_state": 1,
+			"power_switch": 1
+		}],
+		"device_sort_list": [{
+			"device_id": "CAMERA_ID",
+			"product_model": "WYZEC1-JZ"
+		}]
+	}
+}
+```
+
+## URLs to document:
+
+* https://api.wyzecam.com:8443/app/device/get_alarm_info_list
+* https://api.wyzecam.com:8443/app/device/get_share_info_list
+* https://api.wyzecam.com:8443/app/system/get_allow_binding_device_list
+* https://api.wyzecam.com:8443/app/system/set_app_info
+* https://api.wyzecam.com:8443/app/device/upload_device_connect_info
+* https://api.wyzecam.com:8443/app/user/get_user_info
+* https://api.wyzecam.com:8443/app/user/refresh_token
+* https://api.wyzecam.com:8443/app/user/use_app
