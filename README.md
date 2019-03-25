@@ -10,7 +10,7 @@ URL : [https://api.wyzecam.com:8443](https://api.wyzecam.com:8443)
 
 ## 1. Login method.
 
-URL: [https://api.wyzecam.com:8443/app/user/login](https://api.wyzecam.com:8443/app/user/login)
+URL POST: [https://api.wyzecam.com:8443](https://api.wyzecam.com:8443/app/user/login)
 
 JSON payload : 
 
