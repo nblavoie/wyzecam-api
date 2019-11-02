@@ -1,6 +1,13 @@
 # Wyzecam API (unofficial, reverse engineered for experimental use only).
 
-# Note: May 15 2019: Project has been discontinued. Please use RTSP protocol. Infos @ https://forums.wyzecam.com/t/real-time-streaming-protocol-rtsp/6694/552
+# Note: May 15 2019: Project has been discontinued.
+- ***Wyze now provides a RTSP firmware allow you to stream video from cameras. Info @ [https://support.wyzecam.com/hc/en-us/articles/360026245231-Wyze-Cam-RTSP]()***
+- ***Wyze does not provide a general API/SDK for developers. The request for this and Wyze's response [is available here](https://forums.wyzecam.com/t/api-for-developers/32845)***
+
+===
+---
+===
+
 
 Wyzecams are awesome. At 19$, these are the perfect Wi-Fi cameras. They are reliable, well built and the Wyzecam mobile app is well made. But, the mobile application lacks a feature I really need: a way to access the cameras feed outside its walled garden. This repository is my attempt to document the Wyzecam API protocol to locally get my cameras feed in a cross-platform desktop application.
 
